@@ -1,0 +1,2 @@
+C:\projects\AdventOfCodeCpp\x64\Debug\AdventOfCodeCpp.exe
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\x64\Debug\AdventOfCodeCpp.exe
