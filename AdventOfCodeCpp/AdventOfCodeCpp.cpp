@@ -6,6 +6,7 @@
 #include <string>
 #include <forward_list>
 #include <list>
+#include <vector>
 
 
 
@@ -53,37 +54,80 @@ public:
 		std::list<std::string> strings = split(line, ' ');
 		size = std::stoi(strings.front());
 		name = strings.back();
+	}
 
-		std::cout << name << " : " << size << "\n";
+	void print(std::string indentation) {
+		std::cout << indentation << "- " << name << " (file, size=" << size << ")\n";
 	}
 };
 
 class hiearchiDirectory
 {
-private:
-	std::string name;
-	std::list<hiearchiFile> files;
-	std::list<hiearchiDirectory> subDirectories;
-	hiearchiDirectory *parentDirectory;
-
 public:
+	std::string name;
+	hiearchiDirectory* parentDirectory;
+	std::vector<hiearchiFile> files;
+	std::vector<hiearchiDirectory> subDirectories;
+
 	hiearchiDirectory(std::string name) {
 		this->name = name;
 	}
 
-	hiearchiDirectory(std::string name, hiearchiDirectory *parentDirectory) {
+	hiearchiDirectory(std::string name, hiearchiDirectory* parentDirectory) {
 		this->name = name;
 		this->parentDirectory = parentDirectory;
 	}
-
+	/*
 	void addFile(hiearchiFile file) {
 		files.push_back(file);
 	}
 	void addDirectory(hiearchiDirectory directory) {
 		subDirectories.push_back(directory);
 	}
+
+	hiearchiDirectory* getParent() {
+		return parentDirectory;
+	}
+
+	std::list<hiearchiDirectory> getSubDirectories() {
+		return subDirectories;
+	}
+
+	std::string getName() {
+		return name;
+	}
+	*/
+
+	void print(std::string indentation) {
+		std::cout << indentation;
+		std::cout << "- ";
+		std::cout << name;
+		std::cout << " (/dir) :parent ";
+		if (parentDirectory) {
+			std::cout << parentDirectory->name;
+		}
+		std::cout<< "\n";
+		if (subDirectories.size() > 0) {
+			for (hiearchiDirectory dir : subDirectories) {
+				dir.print(indentation + "   ");
+			}
+		}
+		if (files.size() > 0) {
+			for (hiearchiFile file : files) {
+				file.print(indentation + "   ");
+			}
+		}
+	}
 };
 
+std::vector<std::string> toVector(std::list<std::string> list) {
+	std::vector<std::string> vector;
+	for(std::string& str : list)
+	{
+		vector.push_back(str);
+	}
+	return vector;
+}
 
 int main()
 {
@@ -91,7 +135,7 @@ int main()
 	readFile.open("ass7.txt");
 	std::list<std::string> LinesList2;
 	hiearchiDirectory root("/");
-	hiearchiDirectory current = root;
+	hiearchiDirectory* current = &root;
 
 	//read input
 	while (readFile) {
@@ -99,30 +143,58 @@ int main()
 		std::getline(readFile, myString);
 		LinesList2.push_back(myString);
 	}
+	readFile.close();
 
-	for (std::string& str : LinesList2)
-	{
-		std::cout << str << std::endl;
-	}
+	std::vector<std::string> linesVector = toVector(LinesList2);
 
-	for (std::string& str : LinesList2)
-	{
-		std::list<std::string> commandLine = split(str, ' ');
+	for (int i = 0; i < linesVector.size(); i++) {
+		std::string line = linesVector[i];
+		std::list<std::string> commandLine = split(line, ' ');
+
 		std::string command;
 		command = commandLine.front();
-		//switchcase på command
+		if (command == "cd") {
+			command = commandLine.back();
+			if (command == "/") {
+				current = &root;
+			}
+			else if (command == "..") {
+				current = current->parentDirectory;
+			}
+			else {
+				for (hiearchiDirectory dir : current->subDirectories) {
+					if (dir.name == command) {
+						current = &dir;
+						break;
+					}
+				}
+			}
+		}
+		else {
+			i++;
+			while (i < linesVector.size()-1 && linesVector[i].front() != '$') {
+				line = linesVector[i];
+				std::list<std::string> tempCommandLine = split(line, ' ');
+				if (tempCommandLine.front() == "dir") {
+					hiearchiDirectory dir(tempCommandLine.back(), current);
+					current->subDirectories.push_back(dir);
+				}
+				else {
+					hiearchiFile file(linesVector[i]);
+					current->files.push_back(file);
+				}
+				i++;
+			}
+			i--;
+		}
+		std::cout << linesVector[i] << "\n";
+		current->print(" ");
+		std::cout << "\n";
+		root.print(" ");
+		std::cout << "\n ----------------------------------------------------------------------------------------------------- \n";
 	}
-
-	hiearchiFile t("11968 pcccp");
-
-	//if (readFile.is_open()) {
-	//	std::string myString;
-	//	std::getline(readFile, myString);
-	//	//readFile >> myString;
-	//	std::cout << myString;
-	//}
+	root.print(" ");
 }
-
 
 
 
