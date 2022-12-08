@@ -59,6 +59,10 @@ public:
 	void print(std::string indentation) {
 		std::cout << indentation << "- " << name << " (file, size=" << size << ")\n";
 	}
+
+	int getSize() {
+		return size;
+	}
 };
 
 class hiearchiDirectory
@@ -68,6 +72,7 @@ public:
 	hiearchiDirectory* parentDirectory;
 	std::vector<hiearchiFile> files;
 	std::vector<hiearchiDirectory> subDirectories;
+	int size = 0;
 
 	hiearchiDirectory(std::string name) {
 		this->name = name;
@@ -115,6 +120,38 @@ public:
 			for (hiearchiFile file : files) {
 				file.print(indentation + "   ");
 			}
+		}
+	}
+
+	int calculateSize(int* totalSize, int threshold) {
+		if (size != 0) {
+			return size;
+		}
+		int dirSize = 0;
+		for (int i = 0; i < subDirectories.size(); i++) {
+			dirSize += subDirectories[i].calculateSize(totalSize, threshold);
+		}
+		for (int i = 0; i < files.size(); i++) {
+			dirSize += files[i].getSize();
+		}
+
+		//std::cout << "DirSize: " << dirSize << " Threshold: " << threshold << " compare: " << (dirSize <= threshold) << " Total: " << *totalSize << std::endl;
+		if (dirSize <= threshold) {
+			*totalSize += dirSize;
+		}
+		std::cout << name << ": " << dirSize << std::endl;
+		size = dirSize;
+		return size;
+	}
+
+	void findSmallestForRequirement(int* smallest, int requirement) {
+		int temp = 0;
+		int threshold = 0;
+		if (calculateSize(&temp, threshold) < *smallest && size >= requirement) {
+			*smallest = size;
+		}
+		for (int i = 0; i < subDirectories.size(); i++) {
+			subDirectories[i].findSmallestForRequirement(smallest, requirement);
 		}
 	}
 };
@@ -181,13 +218,23 @@ int main()
 			}
 			i--;
 		}
-		std::cout << linesVector[i] << "\n";
-		current->print(" ");
-		std::cout << "\n";
-		root.print(" ");
-		std::cout << "\n ----------------------------------------------------------------------------------------------------- \n";
+
+		//std::cout << linesVector[i] << "\n";
+		//current->print(" ");
+		//std::cout << "\n";
+		//root.print(" ");
+		//std::cout << "\n ----------------------------------------------------------------------------------------------------- \n";
 	}
+
+	int totalSize = 0;
+	int storageUsed = root.calculateSize(&totalSize, 100000);
 	root.print(" ");
+	int totalSizeOnDisk = 70000000;
+	int storageRequired = 30000000;
+	int minSize = storageRequired - (totalSizeOnDisk - storageUsed);
+	int smallest = root.calculateSize(0,0);
+	root.findSmallestForRequirement(&smallest, minSize);
+	std::cout << "Total Size: " << totalSize << " task2: " << smallest;
 }
 
 
