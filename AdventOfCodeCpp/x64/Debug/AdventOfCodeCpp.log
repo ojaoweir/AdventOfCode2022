@@ -1,2 +1,3 @@
 ﻿  AdventOfCodeCpp.cpp
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\AdventOfCodeCpp.cpp(87): warning C4715: 'hiearchiDirectory::getSub': not all control paths return a value
   AdventOfCodeCpp.vcxproj -> C:\projects\AdventOfCode2022\AdventOfCodeCpp\x64\Debug\AdventOfCodeCpp.exe

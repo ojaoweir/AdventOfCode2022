@@ -77,26 +77,22 @@ public:
 		this->name = name;
 		this->parentDirectory = parentDirectory;
 	}
-	/*
-	void addFile(hiearchiFile file) {
-		files.push_back(file);
-	}
-	void addDirectory(hiearchiDirectory directory) {
-		subDirectories.push_back(directory);
+
+	hiearchiDirectory* getSub(std::string name) {
+		for (int i = 0; i < subDirectories.size(); i++) {
+			if (subDirectories[i].name == name) {
+				return &subDirectories[i];
+			}
+		}
 	}
 
-	hiearchiDirectory* getParent() {
-		return parentDirectory;
+	void addSub(hiearchiDirectory newDir) {
+		subDirectories.push_back(newDir);
 	}
-
-	std::list<hiearchiDirectory> getSubDirectories() {
-		return subDirectories;
+	void addSub(std::string newName) {
+		hiearchiDirectory dir(newName, this);
+		subDirectories.push_back(dir);
 	}
-
-	std::string getName() {
-		return name;
-	}
-	*/
 
 	void print(std::string indentation) {
 		std::cout << indentation;
@@ -105,6 +101,9 @@ public:
 		std::cout << " (/dir) :parent ";
 		if (parentDirectory) {
 			std::cout << parentDirectory->name;
+		}
+		else {
+			std::cout << "null";
 		}
 		std::cout<< "\n";
 		if (subDirectories.size() > 0) {
@@ -162,12 +161,7 @@ int main()
 				current = current->parentDirectory;
 			}
 			else {
-				for (hiearchiDirectory dir : current->subDirectories) {
-					if (dir.name == command) {
-						current = &dir;
-						break;
-					}
-				}
+				current = current->getSub(command);
 			}
 		}
 		else {
@@ -177,7 +171,7 @@ int main()
 				std::list<std::string> tempCommandLine = split(line, ' ');
 				if (tempCommandLine.front() == "dir") {
 					hiearchiDirectory dir(tempCommandLine.back(), current);
-					current->subDirectories.push_back(dir);
+					current->addSub(tempCommandLine.back());
 				}
 				else {
 					hiearchiFile file(linesVector[i]);
