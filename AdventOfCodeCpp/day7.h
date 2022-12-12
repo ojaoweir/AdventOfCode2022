@@ -7,53 +7,19 @@
 #include <vector>
 #include "day7.h"
 #include "FileReader.h"
+#include "StringUtils.h"
 
 using namespace std;
 
 class day7
 {
-	static int len(std::string str)
-	{
-		int length = 1;
-		for (int i = 0; str[i] != '\0'; i++)
-		{
-			length++;
-
-		}
-		return length;
-	}
-
-	static std::list<std::string> split(std::string str, char seperator)
-	{
-		int currIndex = 0, i = 0;
-		int startIndex = 0, endIndex = 0;
-		std::list<std::string> strings;
-
-		for (int i = 0; i < len(str); i++) {
-			if (str[i] == seperator || i == len(str))
-			{
-				endIndex = i;
-				std::string subStr = "";
-				subStr.append(str, startIndex, endIndex - startIndex);
-				if (subStr != "$") {
-					strings.push_back(subStr);
-				}
-				startIndex = endIndex + 1;
-			}
-		}
-		std::string subStr = "";
-		subStr.append(str, startIndex, endIndex - startIndex);
-		strings.push_back(subStr);
-		return strings;
-	}
-
 	class hiearchiFile
 	{
 		int size = 0;
 		std::string name;
 	public:
 		hiearchiFile(std::string line) {
-			std::list<std::string> strings = day7::split(line, ' ');
+			std::vector<std::string> strings = StringUtils::split(line, ' ');
 			size = std::stoi(strings.front());
 			name = strings.back();
 		}
@@ -174,7 +140,7 @@ public:
 
 		for (int i = 0; i < linesVector.size(); i++) {
 			std::string line = linesVector[i];
-			std::list<std::string> commandLine = split(line, ' ');
+			std::vector<std::string> commandLine = StringUtils::split(line, ' ');
 
 			std::string command;
 			command = commandLine.front();
@@ -194,7 +160,7 @@ public:
 				i++;
 				while (i < linesVector.size() - 1 && linesVector[i].front() != '$') {
 					line = linesVector[i];
-					std::list<std::string> tempCommandLine = split(line, ' ');
+					std::vector<std::string> tempCommandLine = StringUtils::split(line, ' ');
 					if (tempCommandLine.front() == "dir") {
 						hiearchiDirectory dir(tempCommandLine.back(), current);
 						current->addSub(tempCommandLine.back());

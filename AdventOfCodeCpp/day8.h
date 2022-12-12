@@ -127,6 +127,47 @@ class day8
 		}
 	}
 
+	static int calculateViewForTree(int x, int y, vector<vector<int>>* matrix) {
+		int viewableLeft = 0;
+		int viewableRight = 0;
+		int viewableDown = 0;
+		int viewableUp = 0;
+
+		//Check left
+		for (int i = y - 1; i >= 0; i--) {
+			viewableLeft++;
+			if (matrix->at(x)[i] >= matrix->at(x)[y]) {
+				break;
+			}
+		}
+
+		//Check Right
+		for (int i = y + 1; i < matrix->at(x).size(); i++) {
+			viewableRight++;
+			if (matrix->at(x)[i] >= matrix->at(x)[y]) {
+				break;
+			}
+		}
+
+		//Check Down
+		for (int i = x + 1; i < matrix->size(); i++) {
+			viewableDown++;
+			if (matrix->at(i)[y] >= matrix->at(x)[y]) {
+				break;
+			}
+		}
+
+		//Check Up
+		for (int i = x - 1; i >= 0; i--) {
+			viewableUp++;
+			if (matrix->at(i)[y] >= matrix->at(x)[y]) {
+				break;
+			}
+		}
+
+		return viewableDown * viewableLeft * viewableRight * viewableUp;
+	}
+
 public:
 	static void Run() {
 		vector<string> lines = FileReader::ReadFile("ass8.txt");
@@ -150,8 +191,18 @@ public:
 			AddTreesViewAbleForColumnFromBottom(&coordinates, &matrix, i);
 		}
 
-		//cout << "Task1: " << totalViewableTrees << endl;
 		cout << "Task1: " << coordinates.Size() << endl;
+
+		int highestViewScore = 1;
+		for (int i = 1; i < matrix.size()-1; i++) {
+			for (int j = 1; j < matrix.at(0).size()-1; j++) {
+				int score = calculateViewForTree(i, j, &matrix);
+				if (score > highestViewScore) {
+					highestViewScore = score;
+				}
+			}
+		}
+		cout << "Task2: " << highestViewScore << endl;
 	}
 };
 

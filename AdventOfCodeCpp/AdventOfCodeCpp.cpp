@@ -9,11 +9,13 @@
 #include <vector>
 #include "day7.h"
 #include "day8.h"
+#include "Day9.h"
 
 int main()
 {
 	//day7::Run();
-	day8::Run();
+	//day8::Run();
+	Day9::Run();
 }
 
 
