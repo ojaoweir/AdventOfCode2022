@@ -1,3 +1,22 @@
 ﻿  AdventOfCodeCpp.cpp
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\AdventOfCodeCpp.cpp(92): warning C4715: 'hiearchiDirectory::getSub': not all control paths return a value
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\FileReader.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\FileReader.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\day8.h(41,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\day8.h(80,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\day8.h(106,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\day8.h(122,1): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\day8.h(126,1): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\day8.h(138,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\day8.h(139,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  day8.cpp
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\FileReader.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\FileReader.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\day8.h(41,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\day8.h(80,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\day8.h(106,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\day8.h(122,1): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\day8.h(126,1): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\day8.h(138,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\day8.h(139,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
   AdventOfCodeCpp.vcxproj -> C:\projects\AdventOfCode2022\AdventOfCodeCpp\x64\Debug\AdventOfCodeCpp.exe
