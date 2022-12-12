@@ -5,42 +5,12 @@
 #include <string>
 #include <vector>
 #include "FileReader.h"
+#include "Coordinate.h"
+
 
 using namespace std;
 
-class coordinate {
-	int x;
-	int y;
 
-public:
-	coordinate(int x, int y) {
-		this->x = x;
-		this->y = y;
-	}
-
-	bool Equal(coordinate other) {
-		return x == other.x && y == other.y;
-	}
-};
-
-class coordinateList {
-	vector<coordinate> coordinates;
-
-public:
-	void Add(int x, int y) {
-		coordinate c(x, y);
-		for (int i = 0; i < coordinates.size(); i++) {
-			if (coordinates[i].Equal(c)) {
-				return;
-			}
-		}
-		coordinates.push_back(c);
-	}
-
-	int Size() {
-		return coordinates.size();
-	}
-};
 
 class day8
 {
