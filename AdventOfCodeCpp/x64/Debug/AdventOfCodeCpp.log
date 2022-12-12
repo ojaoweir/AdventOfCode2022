@@ -1,20 +1,7 @@
-﻿  AdventOfCodeCpp.cpp
+﻿  Day10.cpp
 C:\projects\AdventOfCode2022\AdventOfCodeCpp\FileReader.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 C:\projects\AdventOfCode2022\AdventOfCodeCpp\FileReader.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 C:\projects\AdventOfCode2022\AdventOfCodeCpp\StringUtils.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 C:\projects\AdventOfCode2022\AdventOfCodeCpp\StringUtils.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\Coordinate.h(92,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\day8.h(50,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\day8.h(76,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\day8.h(92,1): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\day8.h(96,1): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\day8.h(149,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\day8.h(150,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  Day9.cpp
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\FileReader.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\FileReader.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\Coordinate.h(92,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\StringUtils.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\StringUtils.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  Generating Code...
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day10.cpp(22,29): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   AdventOfCodeCpp.vcxproj -> C:\projects\AdventOfCode2022\AdventOfCodeCpp\x64\Debug\AdventOfCodeCpp.exe

@@ -10,12 +10,14 @@
 #include "day7.h"
 #include "day8.h"
 #include "Day9.h"
+#include "Day10.h"
 
 int main()
 {
 	//day7::Run();
 	//day8::Run();
-	Day9::Run();
+	//Day9::Run();
+	Day10::Run();
 }
 
 

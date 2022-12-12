@@ -35,9 +35,14 @@ public:
 				startIndex = endIndex + 1;
 			}
 		}
-		std::string subStr = "";
-		subStr.append(str, startIndex, endIndex - startIndex);
-		strings.push_back(subStr);
+		if (strings.size() == 0) {
+			strings.push_back(str);
+		}
+		else {
+			std::string subStr = "";
+			subStr.append(str, startIndex, endIndex - startIndex);
+			strings.push_back(subStr);
+		}
 		return strings;
 	}
 };
