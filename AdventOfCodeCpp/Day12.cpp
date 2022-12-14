@@ -348,32 +348,6 @@ void Day12::Run() {
 		}
 	}
 
-	for (int i = 0; i < allPositions.size(); i++) {
-		Position* currentPosition = &allPositions[i];
-		for (int x = currentPosition->GetX() - 1; x <= currentPosition->GetX() + 1; x += 2) {
-			Position* ptr = FindPosition(&allPositions, x, currentPosition->GetY());
-			if (ptr != NULL) {
-				if (ptr->GetHeight() <= currentPosition->GetHeight() + 1) {
-					currentPosition->AddNeighbor(ptr);
-				}
-			}
-		}
-		for (int y = currentPosition->GetY() - 1; y <= currentPosition->GetY() + 1; y += 2) {
-			Position* ptr = FindPosition(&allPositions, currentPosition->GetX(), y);
-			if (ptr != NULL) {
-				if (ptr->GetHeight() <= currentPosition->GetHeight() + 1) {
-					currentPosition->AddNeighbor(ptr);
-				}
-			}
-		}
-	}
-
-	//if (start != NULL && goal != NULL) {
-	//	vector<Position> passedPos;
-	//	cout << "Task1: " << start->FindGoal(goal, 0, gridX, gridY, &passedPos).size() - 1;
-	//}
-
-
 	// ASTAR::
 	//------------------------------------------------------------------
 	vector<AStarCoordinate> closed;
@@ -403,6 +377,8 @@ void Day12::Run() {
 
 		//b) pop q off the open list
 		open.erase(open.begin() + indexOfLeastF);
+
+		//push q on the closed list
 		closed.push_back(q);
 
 		/*c) generate q's 8 successors and set their 
@@ -419,14 +395,5 @@ void Day12::Run() {
 			}
 			AStarGenerateSuccessor(q.x, i, goal, &open, &closed, &q, lines[q.x].at(i));
 		}
-
-		//push q on the closed list
-		//closed.push_back(q);
-
-		//for (int i = 0; i < open.size(); i++) {
-		//	if (open[i].parent == &q) {
-		//		open[i].parent = &closed[closed.size() - 1];
-		//	}
-		//}
 	}
 }

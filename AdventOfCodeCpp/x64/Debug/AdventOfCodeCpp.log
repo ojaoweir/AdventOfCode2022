@@ -7,5 +7,5 @@ C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day12.cpp(130,1): warning C4267: '=
 C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day12.cpp(256,79): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
 C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day12.cpp(327,26): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
 C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day12.cpp(328,29): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day12.cpp(395,38): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day12.cpp(369,38): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   AdventOfCodeCpp.vcxproj -> C:\projects\AdventOfCode2022\AdventOfCodeCpp\x64\Debug\AdventOfCodeCpp.exe
