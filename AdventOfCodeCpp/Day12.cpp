@@ -15,6 +15,7 @@ class Position {
 	int distanceFromEnd = -5;
 
 	void DrawPath(int maxX, int maxY, vector<Position> positions) {
+		return;
 		for (int x = 0; x < maxX; x++) {
 			for (int y = 0; y < maxY; y++) {
 				char c = '.';
@@ -24,7 +25,7 @@ class Position {
 				else {
 					for (int i = 0; i < positions.size(); i++) {
 						if (positions[i].GetX() == x && positions[i].GetY() == y) {
-							c = '*';
+							c =positions[i].GetHeight();
 							break;
 						}
 					}
@@ -43,6 +44,10 @@ public:
 
 	}
 
+	void SetHeight(char c) {
+		height = c;
+	}
+
 	void AddNeighbor(Position* neighbor) {
 		neighbors.push_back(neighbor);
 	}
@@ -59,84 +64,89 @@ public:
 		return height;
 	}
 
-	int FindGoal(Position* goal, int numberOfSteps, int maxX, int maxY, vector<Position> passedPos) {
-		cout << "Number of steps: " << numberOfSteps << " current: " << x << ":" << y << " Goal: " << goal->GetX() << ":" << goal->GetY() << endl;
+	vector<Position> FindGoal(Position* goal, int numberOfSteps, int maxX, int maxY, vector<Position> passedPos) {
+		//cout << "Number of steps: " << numberOfSteps << " current: " << x << ":" << y << " Goal: " << goal->GetX() << ":" << goal->GetY() << endl;
 		passedPos.push_back(*this);
 		DrawPath(maxX, maxY, passedPos);
-		//for (int x = 0; x < maxX; x++) {
-		//	for (int y = 0; y < maxY; y++) {
-		//		char c = '.';
-		//		if (x == this->x && y == this->y) {
-		//			c = 'A';
-		//		}
-		//		else {
-		//			for (int i = 0; i < passedPos.size(); i++) {
-		//				if (passedPos[i].GetX() == x && passedPos[i].GetY() == y) {
-		//					c = '*';
-		//					break;
-		//				}
-		//			}
-		//		}
-		//		cout << c;
-		//	}
-		//	cout << endl;
-		//}
-		//Goal reached:
-//cout << x << " : " << y << endl;
 
+		vector<Position> pathToEnd;
 		if (x == goal->x && y == goal->y) {
 
 			//Cases where it is dead:
-			if (numberOfSteps < distanceFromStart) {
-				distanceFromStart = numberOfSteps;
+			if (passedPos.size() < distanceFromStart) {
+				distanceFromStart = passedPos.size();
 			}
 			distanceFromEnd = 0;
-			cout << "X: " << x << " and Y: " << y << " is goal, was reached in " << numberOfSteps << " steps." << endl;
-			cout << "Minimum is: " << distanceFromStart << endl << endl;
-			return 0;
+			//cout << "X: " << x << " and Y: " << y << " is goal, was reached in " << numberOfSteps << " steps." << endl;
+			//cout << "Minimum is: " << distanceFromStart << endl << endl;
+			pathToEnd.push_back(*this);
+			return pathToEnd;
+			//return 0;
 		}
 
 
 		//Cases where it is dead:
 		if (numberOfSteps >= distanceFromStart) {
-			return -1;
+			return pathToEnd;
+			//return -1;
 		}
 		else {
-			distanceFromStart = numberOfSteps;
+			distanceFromStart = passedPos.size();
 		}
 
-		cout << endl;
+		//cout << endl;
 
 		if (neighbors.size() == 0) {
-			return -1;
+			return pathToEnd;
+			//return -1;
 		}
 
 		if (distanceFromEnd == -1) {
-			return -1;
+			return pathToEnd;
+			//return -1;
 		}
 
 		// Search children:
 		if (distanceFromEnd = -5) {
 			for (int i = 0; i < neighbors.size(); i++) {
-				int childDistanceToGoal = neighbors[i]->FindGoal(goal, distanceFromStart + 1, maxX, maxY, passedPos);
-				if (childDistanceToGoal == -1) {
+				vector<Position> childPathToEnd = neighbors[i]->FindGoal(goal, distanceFromStart + 1, maxX, maxY, passedPos);
+				if (childPathToEnd.empty()) {
 					continue;
 				}
+				//int childDistanceToGoal = neighbors[i]->FindGoal(goal, distanceFromStart + 1, maxX, maxY, passedPos);
+				//if (childDistanceToGoal == -1) {
+				//	continue;
+				//}
 
-				if (distanceFromEnd == -5 || childDistanceToGoal + 1 < distanceFromEnd) {
-					distanceFromEnd = childDistanceToGoal + 1;
+				if (distanceFromEnd == -5 || childPathToEnd.size() < distanceFromEnd) {
+					pathToEnd = childPathToEnd;
+					distanceFromEnd = pathToEnd.size();
 				}
 			}
 
 			//If no child finds goal, kill node
 			if (distanceFromEnd == -5) {
 				distanceFromEnd = -1;
+				vector<Position> t;
+				return t;
 			}
 		}
 
-		cout << "Goal reached in " << distanceFromStart + distanceFromEnd << " steps:" << endl;
+		vector<Position> temp;
+		for (int i = 0; i < pathToEnd.size(); i++) {
+			temp.push_back(pathToEnd[i]);
+		}
+		for (int i = 0; i < passedPos.size(); i++) {
+			temp.push_back(passedPos[i]);
+		}
+		//cout << "Goal reached in " << distanceFromStart + distanceFromEnd << " steps:" << endl;
+		//cout << "Goal reached in " << temp.size() << " steps:" << endl;
+		DrawPath(maxX, maxY, temp);
+		//cout << endl;
 
-		return distanceFromEnd;
+		pathToEnd.push_back(*this);
+		return pathToEnd;
+		//return distanceFromEnd;
 	}
 
 	void SetHeighToLower() {
@@ -180,7 +190,7 @@ void Day12::Run() {
 		}
 		if (allPositions[i].GetHeight() == 'E') {
 			goal = &allPositions[i];
-			goal->SetHeighToLower();
+			goal->SetHeight('z');
 		}
 	}
 
@@ -206,6 +216,6 @@ void Day12::Run() {
 
 	if (start != NULL && goal != NULL) {
 		vector<Position> passedPos;
-		cout << "Task1: " << start->FindGoal(goal, 0, gridX, gridY, passedPos);
+		cout << "Task1: " << start->FindGoal(goal, 0, gridX, gridY, passedPos).size() - 1;
 	}
 }
