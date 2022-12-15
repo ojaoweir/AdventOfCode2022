@@ -250,7 +250,7 @@ void PrintSuccessorTree(AStarCoordinate* parent, AStarCoordinate* current, vecto
 }
 
 
-void AStarGenerateSuccessor(int successorX, int successorY, Position* goal, vector<AStarCoordinate>* open, vector<AStarCoordinate>* closed, AStarCoordinate* q, char height) {
+void AStarGenerateSuccessor(int successorX, int successorY, int goalX, int goalY, vector<AStarCoordinate>* open, vector<AStarCoordinate>* closed, AStarCoordinate* q, char height) {
 	//d) for each successor
 
 	AStarCoordinate successor(successorX, successorY, q, height, closed->size()-1);
@@ -260,7 +260,7 @@ void AStarGenerateSuccessor(int successorX, int successorY, Position* goal, vect
 	//PrintSuccessorTree(q, &successor, closed);
 
 	//i) if successor is the goal, stop search
-	if (successor.x == goal->GetX() && successor.y == goal->GetY()) {
+	if (successor.x == goalX && successor.y == goalY) {
 		cout << "Goal is reached in " << q->g + 1<< " steps." << endl << endl;
 		return;
 		//finished 
@@ -271,8 +271,8 @@ void AStarGenerateSuccessor(int successorX, int successorY, Position* goal, vect
 		successor and q
 		successor.h = distance from goal to
 		successor*/
-	int diffX = goal->GetX() > successor.x ? goal->GetX() - successor.x : successor.x - goal->GetY();
-	int diffY = goal->GetY() > successor.y ? goal->GetY() - successor.y : successor.y - goal->GetY();
+	int diffX = goalX > successor.x ? goalX - successor.x : successor.x - goalX;
+	int diffY = goalY > successor.y ? goalY - successor.y : successor.y - goalY;
 	
 	successor.g = q->g + 1;
 	successor.h = (diffX + diffY) / 2;
@@ -322,29 +322,26 @@ void Day12::Run() {
 	vector<string> lines = FileReader::ReadFile("ass12.txt");
 	lines.pop_back();
 
-	vector<Position> allPositions;
-
 	int gridX = lines.size();
 	int gridY = lines[0].size();
-
-	Position* start = NULL;
-	Position* goal = NULL;
+	int startX;
+	int startY;
+	int endX;
+	int endY;
 
 	for (int x = 0; x < gridX; x++) {
 		for (int y = 0; y < gridY; y++) {
 			char height = lines[x].at(y);
-			allPositions.push_back(Position(height, x, y));
-		}
-	}
-
-	for (int i = 0; i < allPositions.size(); i++) {
-		if (allPositions[i].GetHeight() == 'S') {
-			start = &allPositions[i];
-			start->SetHeighToLower();
-		}
-		if (allPositions[i].GetHeight() == 'E') {
-			goal = &allPositions[i];
-			goal->SetHeight('z');
+			if (height == 'S') {
+				startX = x;
+				startY = y;
+				continue;
+			}
+			if (height == 'E') {
+				endX = x;
+				endY = y;
+				continue;
+			}
 		}
 	}
 
@@ -353,9 +350,8 @@ void Day12::Run() {
 	vector<AStarCoordinate> closed;
 	vector<AStarCoordinate> open;
 
-	start->f = 0;
 
-	AStarCoordinate aStarStart(start->GetX(), start->GetY(), NULL, 'a', -1);
+	AStarCoordinate aStarStart(startX, startY, NULL, 'a', -1);
 	aStarStart.g = 0;
 	aStarStart.f = 0;
 	aStarStart.h = 0;
@@ -387,13 +383,13 @@ void Day12::Run() {
 			if (i < 0 || i >= gridX) {
 				continue;
 			}
-			AStarGenerateSuccessor(i, q.y, goal, &open, &closed, &q, lines[i].at(q.y));
+			AStarGenerateSuccessor(i, q.y, endX, endY, &open, &closed, &q, lines[i].at(q.y));
 		}
 		for (int i = q.y - 1; i <= q.y + 1; i += 2) {
 			if (i < 0 || i >= gridY) {
 				continue;
 			}
-			AStarGenerateSuccessor(q.x, i, goal, &open, &closed, &q, lines[q.x].at(i));
+			AStarGenerateSuccessor(q.x, i, endX, endY, &open, &closed, &q, lines[q.x].at(i));
 		}
 	}
 }
