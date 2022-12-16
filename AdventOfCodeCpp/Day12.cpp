@@ -250,19 +250,18 @@ void PrintSuccessorTree(AStarCoordinate* parent, AStarCoordinate* current, vecto
 }
 
 
-void AStarGenerateSuccessor(int successorX, int successorY, int goalX, int goalY, vector<AStarCoordinate>* open, vector<AStarCoordinate>* closed, AStarCoordinate* q, char height) {
+int AStarGenerateSuccessor(int successorX, int successorY, int goalX, int goalY, vector<AStarCoordinate>* open, vector<AStarCoordinate>* closed, AStarCoordinate* q, char height) {
 	//d) for each successor
 
 	AStarCoordinate successor(successorX, successorY, q, height, closed->size()-1);
 	if (successor.height > q->height + 1) {
-		return;
+		return -1;
 	}
 	//PrintSuccessorTree(q, &successor, closed);
 
 	//i) if successor is the goal, stop search
 	if (successor.x == goalX && successor.y == goalY) {
-		cout << "Goal is reached in " << q->g + 1<< " steps." << endl << endl;
-		return;
+		return q->g + 1;
 		//finished 
 	}
 
@@ -311,45 +310,19 @@ void AStarGenerateSuccessor(int successorX, int successorY, int goalX, int goalY
 	}
 
 	if (skipSuccessor) {
-		return;
+		return -1;
 	}
 	open->push_back(successor);
+	return -1;
 }
 
 
-
-void Day12::Run() {
-	vector<string> lines = FileReader::ReadFile("ass12.txt");
-	lines.pop_back();
-
-	int gridX = lines.size();
-	int gridY = lines[0].size();
-	int startX;
-	int startY;
-	int endX;
-	int endY;
-
-	for (int x = 0; x < gridX; x++) {
-		for (int y = 0; y < gridY; y++) {
-			char height = lines[x].at(y);
-			if (height == 'S') {
-				startX = x;
-				startY = y;
-				continue;
-			}
-			if (height == 'E') {
-				endX = x;
-				endY = y;
-				continue;
-			}
-		}
-	}
+int FindGoalAStar(int gridX, int gridY, int startX, int startY, int endX, int endY, vector<string> lines, int breakAfterMax) {
 
 	// ASTAR::
 	//------------------------------------------------------------------
 	vector<AStarCoordinate> closed;
 	vector<AStarCoordinate> open;
-
 
 	AStarCoordinate aStarStart(startX, startY, NULL, 'a', -1);
 	aStarStart.g = 0;
@@ -357,11 +330,15 @@ void Day12::Run() {
 	aStarStart.h = 0;
 	open.push_back(aStarStart);
 	AStarCoordinate q = open.back();
+	int goalReached = -1;
 
 	while (!open.empty()) {
 		/*a) find the node with the least f on
 		the open list, call it "q"*/
 		q = open.back();
+		if (q.g > breakAfterMax) {
+			return breakAfterMax + 1;
+		}
 		int indexOfLeastF = open.size() - 1;
 		for (int i = 0; i < open.size(); i++) {
 			if (open[i].f < q.f) {
@@ -377,19 +354,102 @@ void Day12::Run() {
 		//push q on the closed list
 		closed.push_back(q);
 
-		/*c) generate q's 8 successors and set their 
+		/*c) generate q's 8 successors and set their
 		parents to q*/
 		for (int i = q.x - 1; i <= q.x + 1; i += 2) {
 			if (i < 0 || i >= gridX) {
 				continue;
 			}
-			AStarGenerateSuccessor(i, q.y, endX, endY, &open, &closed, &q, lines[i].at(q.y));
+			goalReached = AStarGenerateSuccessor(i, q.y, endX, endY, &open, &closed, &q, lines[i].at(q.y));
+			if (goalReached > 0) {
+				break;
+			}
+		}
+		if (goalReached > 0) {
+			break;
 		}
 		for (int i = q.y - 1; i <= q.y + 1; i += 2) {
 			if (i < 0 || i >= gridY) {
 				continue;
 			}
-			AStarGenerateSuccessor(q.x, i, endX, endY, &open, &closed, &q, lines[q.x].at(i));
+			goalReached = AStarGenerateSuccessor(q.x, i, endX, endY, &open, &closed, &q, lines[q.x].at(i));
+			if (goalReached > 0) {
+				break;
+			}
+		}
+		if (goalReached > 0) {
+			break;
 		}
 	}
+	return goalReached;
+}
+
+
+void Task2(int gridX, int gridY, int endX, int endY, vector<string> lines) {
+	vector<int> allStartsX;
+	vector<int> allStartsY;
+	vector<int> allDistances;
+
+	for (int x = 0; x < gridX; x++) {
+		for (int y = 0; y < gridY; y++) {
+			char height = lines[x].at(y);
+			if (height == 'S' || height == 'a') {
+				allStartsX.push_back(x);
+				allStartsY.push_back(y);
+			}
+		}
+	}
+	int minDistance = 1000000;
+
+	for (int i = 0; i < allStartsX.size(); i++) {
+		
+		int temp = FindGoalAStar(gridX, gridY, allStartsX[i], allStartsY[i], endX, endY, lines, minDistance);
+		if (temp == -1) {
+			continue;
+		}
+		if (temp < minDistance) {
+			minDistance = temp;
+		}
+	}
+	cout << "Task2: Goal is reached in " << minDistance << " steps." << endl << endl;
+}
+void Task1(int gridX, int gridY, int endX, int endY, vector<string> lines) {
+	int startX = -1;
+	int startY = -1;
+	for (int x = 0; x < gridX; x++) {
+		for (int y = 0; y < gridY; y++) {
+			char height = lines[x].at(y);
+			if (height == 'S') {
+				startX = x;
+				startY = y;
+				continue;
+			}
+		}
+	}
+	int goalReached = FindGoalAStar(gridX, gridY, startX, startY, endX, endY, lines, 10000000);
+	cout << "Task1: Goal is reached in " << goalReached << " steps." << endl;
+}
+
+void Day12::Run() {
+	vector<string> lines = FileReader::ReadFile("ass12.txt");
+	lines.pop_back();
+
+	int gridX = lines.size();
+	int gridY = lines[0].size();
+	int endX = -1;
+	int endY = -1;
+
+	for (int x = 0; x < gridX; x++) {
+		for (int y = 0; y < gridY; y++) {
+			char height = lines[x].at(y);
+			if (height == 'E') {
+				endX = x;
+				endY = y;
+				continue;
+			}
+		}
+	}
+	Task1(gridX, gridY, endX, endY, lines);
+	Task2(gridX, gridY, endX, endY, lines);
+
 }

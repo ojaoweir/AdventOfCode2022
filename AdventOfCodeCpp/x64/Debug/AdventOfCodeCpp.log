@@ -1,11 +1,7 @@
-﻿  Day12.cpp
+﻿  Day13.cpp
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\StringUtils.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\StringUtils.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 C:\projects\AdventOfCode2022\AdventOfCodeCpp\FileReader.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 C:\projects\AdventOfCode2022\AdventOfCodeCpp\FileReader.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day12.cpp(80,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day12.cpp(99,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day12.cpp(130,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day12.cpp(256,79): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day12.cpp(325,26): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day12.cpp(326,29): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day12.cpp(365,38): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13.cpp(113,31): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   AdventOfCodeCpp.vcxproj -> C:\projects\AdventOfCode2022\AdventOfCodeCpp\x64\Debug\AdventOfCodeCpp.exe
