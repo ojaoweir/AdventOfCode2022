@@ -36,7 +36,7 @@ class Packet {
 	vector<Packet> children;
 	vector<PacketInt> values;
 public:
-	int Id;
+	int Id = 0;
 
 	void AddChild() {
 		if (HasChildOpen()) {
@@ -52,10 +52,12 @@ public:
 
 	void CloseChild() {
 		if (HasChildOpen()) {
-			children[children.size() - 1].CloseChild();
-		}
-		else {
-			currentChild++;
+			if (children[children.size() - 1].HasChildOpen()) {
+				children[children.size() - 1].CloseChild();
+			}
+			else {
+				currentChild++;
+			}
 		}
 	}
 
@@ -96,6 +98,56 @@ public:
 		}
 		cout << ']';
 	}
+
+	int size() {
+		return values.size() + children.size();
+	}
+
+	int ChildType(int childIndex) {
+		for (int i = 0; i < children.size(); i++) {
+			if (children[i].Id == childIndex) {
+				return 0;
+			}
+		}
+		for (int i = 0; i < values.size(); i++) {
+			if (values[i].Id == childIndex) {
+				return 1;
+			}
+		}
+	}
+
+	void CompareChild(int compareChild, Packet other) {
+		int childType = ChildType(compareChild);
+		switch (childType)
+		{
+		case 0:
+			children[GetChildId(compareChild)].CompareChild(compareChild, other.GetChild(other.GetChildId(compareChild)));
+		default:
+			break;
+		}
+	}
+
+	Packet GetChild(int childIndex) {
+		return children[childIndex];
+	}
+
+	int GetChildId(int childId) {
+		for (int i = 0; i < children.size(); i++) {
+			if (children[i].Id == childId) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	int GetValueId(int childId) {
+		for (int i = 0; i < values.size(); i++) {
+			if (values[i].Id == childId) {
+				return i;
+			}
+		}
+		return -1;
+	}
 };
 
 void AddToPacket(Packet* packet, string line, int* start, int* end, int newStart) {
@@ -123,10 +175,10 @@ Packet CreateNew(string input) {
 		case ']':
 			intEnd = i;
 			AddToPacket(&packet, input, &intStart, &intEnd, i+1);
+			packet.CloseChild();
 			break;
 		case ',':
 			intEnd = i;
-			packet.CloseChild();
 			AddToPacket(&packet, input, &intStart, &intEnd, i+1);
 			break;
 		default:
@@ -135,55 +187,49 @@ Packet CreateNew(string input) {
 	}
 
 	return packet;
-
-
-	//vector<ListMarker> markers;
-
-	//for (int i = 0; i < input.size(); i++) {
-	//	if (input[i] == '[') {
-	//		ListMarker newMarker;
-	//		newMarker.start = i;
-	//	}
-	//	else if (input[i] == ']') {
-	//		for (int i = markers.size() - 1; i >= 0; i++) {
-	//			if (markers[i].end == -1) {
-	//				markers[i].end = i;
-	//			}
-	//		}
-	//	}
-
-	//	for (int i = 0; i < markers.size(); i++) {
-	//		int subStrStart = markers[i].start;
-	//		int nextMarker = max(i + 1, (int)markers.size() - 1);
-
-	//		for (int j = subStrStart; i < markers[i].end; i++) {
-	//			int subStrEnd = min(markers[i].end, markers[nextMarker].start);
-	//			string nextInputString = input.substr(subStrStart, subStrEnd - subStrStart);
-	//		}
-	//	}
-	//}
-
-	//vector<string> packetObjects = StringUtils::split(input, ',');
-
-	//for (int i = 0; i < packetObjects.size(); i++) {
-	//	if (packetObjects[i].at(0) == '[') {
-	//		PacketObjectList packetList;
-
-	//	}
 	}
+
+class PacketPair {
+public:
+	Packet left;
+	Packet right;
+
+	void Print() {
+		left.print();
+		cout << endl;
+		right.print();
+		cout << endl << endl;
+	}
+
+	bool IsInOrder() {
+		for (int compareIndex = 0; 
+			compareIndex < max(left.size(), right.size()); 
+			compareIndex++) {
+			if (left.ChildType(compareIndex) == right.ChildType(compareIndex)) {
+				left.CompareChild(compareIndex, right);
+			}
+		}
+		return false;
+	}
+};
 
 void Day13::Run() {
 	vector<string> lines = FileReader::ReadFile("ass13.txt");
 	lines.pop_back();
 
+	vector<PacketPair> packetPairs;
+	int totalOutOfOrder = 0;
+
 	Packet p = CreateNew(lines[0]);
-	for (int i = 0; i < lines.size(); i++) {
-		if (lines[i] == "") {
-			cout << endl;
-			continue;
+	for (int i = 0; i < lines.size(); i += 3) {
+		PacketPair pp;
+		pp.left = CreateNew(lines[i]);
+		pp.right = CreateNew(lines[i + 1]);
+		
+		pp.Print();
+
+		if (!pp.IsInOrder()) {
+			totalOutOfOrder += i + 1;
 		}
-		p = CreateNew(lines[i]);
-		p.print();
-		cout << endl;
 	}
 }

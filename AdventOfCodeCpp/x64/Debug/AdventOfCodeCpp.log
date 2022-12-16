@@ -1,7 +1,10 @@
-﻿  Day13.cpp
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\StringUtils.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\StringUtils.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\FileReader.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\FileReader.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13.cpp(113,31): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  AdventOfCodeCpp.vcxproj -> C:\projects\AdventOfCode2022\AdventOfCodeCpp\x64\Debug\AdventOfCodeCpp.exe
+﻿  Day13_2.cpp
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13_2.cpp(18,21): error C3646: 'ToList': unknown override specifier
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13_2.cpp(18,28): error C2059: syntax error: ')'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13_2.cpp(18,30): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13_2.cpp(32,13): error C3646: 'ToList': unknown override specifier
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13_2.cpp(32,19): error C2059: syntax error: '('
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13_2.cpp(32,22): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13_2.cpp(40,11): error C3861: 'ToList': identifier not found
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13_2.cpp(74,32): error C2039: 'ToList': is not a member of 'PacketObject'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13_2.cpp(8,7): message : see declaration of 'PacketObject'
