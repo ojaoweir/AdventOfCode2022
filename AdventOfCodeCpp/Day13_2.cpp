@@ -19,14 +19,34 @@ public:
 		PacketList pl;
 		return pl;
 	}
+
+	virtual bool IsOpen() {
+		return false;
+	}
+
+	virtual void AddInt(int value) {
+
+	}
+
+	virtual void OpenChild() {
+
+	}
+
+	virtual void CloseChild() {
+
+	}
 };
 
 class PacketInt : public PacketObject {
 
 	int value;
 public:
+	PacketInt(int value) {
+		this->value = value;
+	}
+
 	void Print() {
-		cout << "I am an int";
+		cout << value;
 	}
 
 	PacketList ToList() {
@@ -53,6 +73,7 @@ public:
 
 class PacketList : public PacketObject {
 	vector<PacketObject> objectsInList;
+	bool isOpen = true;
 public:
 
 	PacketList() {
@@ -67,7 +88,11 @@ public:
 	}
 
 	void Print() {
-		cout << "I have " << objectsInList.size() << " children";
+		cout << '[';
+		for (int i = 0; i < objectsInList.size(); i++) {
+			objectsInList[i].Print();
+			cout << ',';
+		}
 	}
 
 	int CompareTo(PacketObject other) {
@@ -83,6 +108,42 @@ public:
 		return 0;
 	}
 
+	void AddInt(int value) {
+		if (objectsInList.back().IsOpen()) {
+			objectsInList.back().AddInt(value);
+		}
+		else {
+			PacketInt pi(value);
+			objectsInList.push_back(pi);
+		}
+	}
+	
+	bool IsOpen() {
+		return isOpen;
+	}
+
+	bool HasOpenChild() {
+		return objectsInList.back().IsOpen();
+	}
+
+	void OpenChild() {
+		if (HasOpenChild()) {
+			objectsInList.back().OpenChild();
+		}
+		else {
+			PacketList pl;
+			objectsInList.push_back(pl);
+		}
+	}
+
+	void CloseChild() {
+		if (HasOpenChild()) {
+			objectsInList.back().CloseChild();
+		}
+		else {
+			isOpen = false;
+		}
+	}
 };
 
 void Day13_2::Run() {
