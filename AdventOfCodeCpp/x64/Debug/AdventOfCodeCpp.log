@@ -1,23 +1,285 @@
-﻿  AdventOfCodeCpp.cpp
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\FileReader.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\FileReader.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\StringUtils.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\StringUtils.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\Coordinate.h(92,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\day8.h(50,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\day8.h(76,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\day8.h(92,1): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\day8.h(96,1): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\day8.h(149,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\day8.h(150,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  Day13_2.cpp
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13_2.cpp(18,21): error C3646: 'ToList': unknown override specifier
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13_2.cpp(18,28): error C2059: syntax error: ')'
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13_2.cpp(18,30): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13_2.cpp(52,13): error C3646: 'ToList': unknown override specifier
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13_2.cpp(52,19): error C2059: syntax error: '('
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13_2.cpp(52,22): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13_2.cpp(60,11): error C3861: 'ToList': identifier not found
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13_2.cpp(99,32): error C2039: 'ToList': is not a member of 'PacketObject'
-C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13_2.cpp(8,7): message : see declaration of 'PacketObject'
+﻿  Day13_2.cpp
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13_2.cpp(22,21): error C2027: use of undefined type 'PacketList'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13_2.cpp(10,7): message : see declaration of 'PacketList'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13_2.cpp(23,14): error C2079: 'pl' uses undefined class 'PacketList'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13_2.cpp(56,13): error C2027: use of undefined type 'PacketList'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13_2.cpp(10,7): message : see declaration of 'PacketList'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13_2.cpp(57,14): error C2079: 'pl' uses undefined class 'PacketList'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13_2.cpp(57,16): error C2440: 'initializing': cannot convert from 'PacketInt' to 'int'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13_2.cpp(57,16): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13_2.cpp(64,11): error C2027: use of undefined type 'PacketList'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13_2.cpp(10,7): message : see declaration of 'PacketList'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13_2.cpp(64,1): error C2027: use of undefined type 'PacketList'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\Day13_2.cpp(10,7): message : see declaration of 'PacketList'
+  PacketInt2.cpp
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketObject2.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(12,1): error C2504: 'PacketObject2': base class undefined
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(13,9): error C2065: 'PacketObject2': undeclared identifier
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(13,2): error C2923: 'std::vector': 'PacketObject2' is not a valid template type argument for parameter '_Ty'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(13,9): message : see declaration of 'PacketObject2'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(13,2): error C2976: 'std::vector': too few template arguments
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(494,1): message : see declaration of 'std::vector'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(20,14): error C2061: syntax error: identifier 'PacketInt2'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(20,2): error C2535: 'PacketList2::PacketList2(void)': member function already defined or declared
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(17,2): message : see declaration of 'PacketList2::PacketList2'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(36,16): error C2061: syntax error: identifier 'PacketObject2'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(17,13): error C2512: 'std::vector': no appropriate default constructor available
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(494,1): message : see declaration of 'std::vector'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(20,13): error C2512: 'std::vector': no appropriate default constructor available
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(494,1): message : see declaration of 'std::vector'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(21,27): error C2065: 'pi': undeclared identifier
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(30,36): error C2662: 'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type std::vector<_Ty,_Alloc>::size(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(30,23): message : Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(30,23): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(1930,39): message : see declaration of 'std::vector<_Ty,_Alloc>::size'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(30,36): message : while trying to match the argument list '()'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(31,4): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::vector' (or there is no acceptable conversion)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(1955,40): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept const'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(1945,34): message : or       '_Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(31,4): message : while trying to match the argument list '(std::vector, int)'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(37,27): error C2065: 'other': undeclared identifier
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(39,25): error C2662: 'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type std::vector<_Ty,_Alloc>::size(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(39,12): message : Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(39,12): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(1930,39): message : see declaration of 'std::vector<_Ty,_Alloc>::size'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(39,25): message : while trying to match the argument list '()'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(39,57): error C2662: 'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type std::vector<_Ty,_Alloc>::size(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(39,43): message : Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(39,43): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(1930,39): message : see declaration of 'std::vector<_Ty,_Alloc>::size'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(39,57): message : while trying to match the argument list '()'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(39,8): error C2672: 'std::min': no matching overloaded function found
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(74,26): message : could be '_Ty std::min(std::initializer_list<_Elem>)'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(71,26): message : or       '_Ty std::min(std::initializer_list<_Elem>,_Pr)'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(39,8): message : '_Ty std::min(std::initializer_list<_Elem>,_Pr)': expects 2 arguments - 1 provided
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(64,6): message : or       'const _Ty &std::min(const _Ty &,const _Ty &) noexcept(<expr>)'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(39,8): message : 'const _Ty &std::min(const _Ty &,const _Ty &) noexcept(<expr>)': expects 2 arguments - 1 provided
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(54,33): message : or       'const _Ty &std::min(const _Ty &,const _Ty &,_Pr) noexcept(<expr>)'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(39,8): message : 'const _Ty &std::min(const _Ty &,const _Ty &,_Pr) noexcept(<expr>)': expects 3 arguments - 1 provided
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(41,21): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::vector' (or there is no acceptable conversion)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(1955,40): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept const'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(1945,34): message : or       '_Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(41,21): message : while trying to match the argument list '(std::vector, int)'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(41,57): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::vector' (or there is no acceptable conversion)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(1955,40): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept const'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(1945,34): message : or       '_Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(41,57): message : while trying to match the argument list '(std::vector, int)'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(50,20): error C2663: 'std::vector<_Ty,_Alloc>::back': no overloaded function has valid conversion for 'this' pointer
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(2010,40): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::back(void) noexcept const'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(50,20): message : 'const _Ty &std::vector<_Ty,_Alloc>::back(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(50,7): message : Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(50,7): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(2001,34): message : or       '_Ty &std::vector<_Ty,_Alloc>::back(void) noexcept'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(50,20): message : '_Ty &std::vector<_Ty,_Alloc>::back(void) noexcept': cannot convert 'this' pointer from 'std::vector' to 'std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(50,7): message : Reason: cannot convert from 'std::vector' to 'std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(50,7): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(50,20): message : while trying to match the argument list '()'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(51,17): error C2663: 'std::vector<_Ty,_Alloc>::back': no overloaded function has valid conversion for 'this' pointer
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(2010,40): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::back(void) noexcept const'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(51,17): message : 'const _Ty &std::vector<_Ty,_Alloc>::back(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(51,4): message : Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(51,4): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(2001,34): message : or       '_Ty &std::vector<_Ty,_Alloc>::back(void) noexcept'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(51,17): message : '_Ty &std::vector<_Ty,_Alloc>::back(void) noexcept': cannot convert 'this' pointer from 'std::vector' to 'std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(51,4): message : Reason: cannot convert from 'std::vector' to 'std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(51,4): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(51,17): message : while trying to match the argument list '()'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(54,4): error C2065: 'PacketInt2': undeclared identifier
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(54,15): error C2146: syntax error: missing ';' before identifier 'pi'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(54,15): error C3861: 'pi': identifier not found
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(55,28): error C2065: 'pi': undeclared identifier
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(64,23): error C2663: 'std::vector<_Ty,_Alloc>::back': no overloaded function has valid conversion for 'this' pointer
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(2010,40): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::back(void) noexcept const'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(64,23): message : 'const _Ty &std::vector<_Ty,_Alloc>::back(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(64,10): message : Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(64,10): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(2001,34): message : or       '_Ty &std::vector<_Ty,_Alloc>::back(void) noexcept'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(64,23): message : '_Ty &std::vector<_Ty,_Alloc>::back(void) noexcept': cannot convert 'this' pointer from 'std::vector' to 'std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(64,10): message : Reason: cannot convert from 'std::vector' to 'std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(64,10): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(64,23): message : while trying to match the argument list '()'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(69,17): error C2663: 'std::vector<_Ty,_Alloc>::back': no overloaded function has valid conversion for 'this' pointer
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(2010,40): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::back(void) noexcept const'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(69,17): message : 'const _Ty &std::vector<_Ty,_Alloc>::back(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(69,4): message : Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(69,4): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(2001,34): message : or       '_Ty &std::vector<_Ty,_Alloc>::back(void) noexcept'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(69,17): message : '_Ty &std::vector<_Ty,_Alloc>::back(void) noexcept': cannot convert 'this' pointer from 'std::vector' to 'std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(69,4): message : Reason: cannot convert from 'std::vector' to 'std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(69,4): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(69,17): message : while trying to match the argument list '()'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(73,17): error C2663: 'std::vector<_Ty,_Alloc>::push_back': no overloaded function has valid conversion for 'this' pointer
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(939,23): message : could be 'void std::vector<_Ty,_Alloc>::push_back(_Ty &&)'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(73,17): message : 'void std::vector<_Ty,_Alloc>::push_back(_Ty &&)': cannot convert 'this' pointer from 'std::vector' to 'std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(73,4): message : Reason: cannot convert from 'std::vector' to 'std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(73,4): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(935,23): message : or       'void std::vector<_Ty,_Alloc>::push_back(const _Ty &)'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(73,17): message : 'void std::vector<_Ty,_Alloc>::push_back(const _Ty &)': cannot convert 'this' pointer from 'std::vector' to 'std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(73,4): message : Reason: cannot convert from 'std::vector' to 'std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(73,4): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(73,17): message : while trying to match the argument list '(PacketList2)'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(79,17): error C2663: 'std::vector<_Ty,_Alloc>::back': no overloaded function has valid conversion for 'this' pointer
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(2010,40): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::back(void) noexcept const'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(79,17): message : 'const _Ty &std::vector<_Ty,_Alloc>::back(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(79,4): message : Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(79,4): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(2001,34): message : or       '_Ty &std::vector<_Ty,_Alloc>::back(void) noexcept'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(79,17): message : '_Ty &std::vector<_Ty,_Alloc>::back(void) noexcept': cannot convert 'this' pointer from 'std::vector' to 'std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(79,4): message : Reason: cannot convert from 'std::vector' to 'std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(79,4): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(79,17): message : while trying to match the argument list '()'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketInt2.h(19,13): error C3646: 'ToList': unknown override specifier
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketInt2.h(19,19): error C2059: syntax error: '('
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketInt2.h(19,22): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketInt2.h(27,19): error C2660: 'PacketList2::CompareTo': function does not take 1 arguments
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(36,6): message : see declaration of 'PacketList2::CompareTo'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketInt2.h(27,19): message : while trying to match the argument list '(PacketObject2)'
+  PacketList2.cpp
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketObject2.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketObject2.h(19,22): error C3646: 'ToList': unknown override specifier
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketObject2.h(19,29): error C2059: syntax error: ')'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketObject2.h(19,31): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketInt2.h(19,13): error C3646: 'ToList': unknown override specifier
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketInt2.h(19,19): error C2059: syntax error: '('
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketInt2.h(19,22): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketInt2.h(27,11): error C3861: 'ToList': identifier not found
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(37,33): error C2039: 'ToList': is not a member of 'PacketObject2'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketObject2.h(8,7): message : see declaration of 'PacketObject2'
+  PacketObject2.cpp
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketObject2.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketInt2.h(7,1): error C2504: 'PacketObject2': base class undefined
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketInt2.h(19,13): error C3646: 'ToList': unknown override specifier
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketInt2.h(19,19): error C2059: syntax error: '('
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketInt2.h(19,22): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketInt2.h(24,16): error C2061: syntax error: identifier 'PacketObject2'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketInt2.h(25,53): error C2065: 'other': undeclared identifier
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketInt2.h(27,11): error C3861: 'ToList': identifier not found
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketInt2.h(27,30): error C2065: 'other': undeclared identifier
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(12,1): error C2504: 'PacketObject2': base class undefined
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(13,9): error C2065: 'PacketObject2': undeclared identifier
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(13,2): error C2923: 'std::vector': 'PacketObject2' is not a valid template type argument for parameter '_Ty'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(13,9): message : see declaration of 'PacketObject2'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(13,2): error C2976: 'std::vector': too few template arguments
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(494,1): message : see declaration of 'std::vector'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(36,16): error C2061: syntax error: identifier 'PacketObject2'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(17,13): error C2512: 'std::vector': no appropriate default constructor available
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(494,1): message : see declaration of 'std::vector'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(20,13): error C2512: 'std::vector': no appropriate default constructor available
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(494,1): message : see declaration of 'std::vector'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(21,16): error C2663: 'std::vector<_Ty,_Alloc>::push_back': no overloaded function has valid conversion for 'this' pointer
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(939,23): message : could be 'void std::vector<_Ty,_Alloc>::push_back(_Ty &&)'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(21,16): message : 'void std::vector<_Ty,_Alloc>::push_back(_Ty &&)': cannot convert 'this' pointer from 'std::vector' to 'std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(21,3): message : Reason: cannot convert from 'std::vector' to 'std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(21,3): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(935,23): message : or       'void std::vector<_Ty,_Alloc>::push_back(const _Ty &)'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(21,16): message : 'void std::vector<_Ty,_Alloc>::push_back(const _Ty &)': cannot convert 'this' pointer from 'std::vector' to 'std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(21,3): message : Reason: cannot convert from 'std::vector' to 'std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(21,3): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(21,16): message : while trying to match the argument list '(PacketInt2)'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(30,36): error C2662: 'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type std::vector<_Ty,_Alloc>::size(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(30,23): message : Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(30,23): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(1930,39): message : see declaration of 'std::vector<_Ty,_Alloc>::size'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(30,36): message : while trying to match the argument list '()'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(31,4): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::vector' (or there is no acceptable conversion)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(1955,40): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept const'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(1945,34): message : or       '_Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(31,4): message : while trying to match the argument list '(std::vector, int)'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(37,27): error C2065: 'other': undeclared identifier
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(39,25): error C2662: 'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type std::vector<_Ty,_Alloc>::size(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(39,12): message : Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(39,12): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(1930,39): message : see declaration of 'std::vector<_Ty,_Alloc>::size'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(39,25): message : while trying to match the argument list '()'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(39,57): error C2662: 'allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type std::vector<_Ty,_Alloc>::size(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(39,43): message : Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(39,43): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(1930,39): message : see declaration of 'std::vector<_Ty,_Alloc>::size'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(39,57): message : while trying to match the argument list '()'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(39,8): error C2672: 'std::min': no matching overloaded function found
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(74,26): message : could be '_Ty std::min(std::initializer_list<_Elem>)'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(71,26): message : or       '_Ty std::min(std::initializer_list<_Elem>,_Pr)'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(39,8): message : '_Ty std::min(std::initializer_list<_Elem>,_Pr)': expects 2 arguments - 1 provided
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(64,6): message : or       'const _Ty &std::min(const _Ty &,const _Ty &) noexcept(<expr>)'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(39,8): message : 'const _Ty &std::min(const _Ty &,const _Ty &) noexcept(<expr>)': expects 2 arguments - 1 provided
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(54,33): message : or       'const _Ty &std::min(const _Ty &,const _Ty &,_Pr) noexcept(<expr>)'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(39,8): message : 'const _Ty &std::min(const _Ty &,const _Ty &,_Pr) noexcept(<expr>)': expects 3 arguments - 1 provided
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(41,21): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::vector' (or there is no acceptable conversion)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(1955,40): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept const'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(1945,34): message : or       '_Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(41,21): message : while trying to match the argument list '(std::vector, int)'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(41,57): error C2678: binary '[': no operator found which takes a left-hand operand of type 'std::vector' (or there is no acceptable conversion)
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(1955,40): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept const'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(1945,34): message : or       '_Ty &std::vector<_Ty,_Alloc>::operator [](const allocator_traits<allocator_traits<_Alloc>::rebind_alloc<_Ty>>::size_type) noexcept'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(41,57): message : while trying to match the argument list '(std::vector, int)'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(50,20): error C2663: 'std::vector<_Ty,_Alloc>::back': no overloaded function has valid conversion for 'this' pointer
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(2010,40): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::back(void) noexcept const'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(50,20): message : 'const _Ty &std::vector<_Ty,_Alloc>::back(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(50,7): message : Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(50,7): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(2001,34): message : or       '_Ty &std::vector<_Ty,_Alloc>::back(void) noexcept'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(50,20): message : '_Ty &std::vector<_Ty,_Alloc>::back(void) noexcept': cannot convert 'this' pointer from 'std::vector' to 'std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(50,7): message : Reason: cannot convert from 'std::vector' to 'std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(50,7): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(50,20): message : while trying to match the argument list '()'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(51,17): error C2663: 'std::vector<_Ty,_Alloc>::back': no overloaded function has valid conversion for 'this' pointer
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(2010,40): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::back(void) noexcept const'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(51,17): message : 'const _Ty &std::vector<_Ty,_Alloc>::back(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(51,4): message : Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(51,4): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(2001,34): message : or       '_Ty &std::vector<_Ty,_Alloc>::back(void) noexcept'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(51,17): message : '_Ty &std::vector<_Ty,_Alloc>::back(void) noexcept': cannot convert 'this' pointer from 'std::vector' to 'std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(51,4): message : Reason: cannot convert from 'std::vector' to 'std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(51,4): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(51,17): message : while trying to match the argument list '()'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(55,17): error C2663: 'std::vector<_Ty,_Alloc>::push_back': no overloaded function has valid conversion for 'this' pointer
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(939,23): message : could be 'void std::vector<_Ty,_Alloc>::push_back(_Ty &&)'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(55,17): message : 'void std::vector<_Ty,_Alloc>::push_back(_Ty &&)': cannot convert 'this' pointer from 'std::vector' to 'std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(55,4): message : Reason: cannot convert from 'std::vector' to 'std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(55,4): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(935,23): message : or       'void std::vector<_Ty,_Alloc>::push_back(const _Ty &)'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(55,17): message : 'void std::vector<_Ty,_Alloc>::push_back(const _Ty &)': cannot convert 'this' pointer from 'std::vector' to 'std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(55,4): message : Reason: cannot convert from 'std::vector' to 'std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(55,4): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(55,17): message : while trying to match the argument list '(PacketInt2)'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(64,23): error C2663: 'std::vector<_Ty,_Alloc>::back': no overloaded function has valid conversion for 'this' pointer
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(2010,40): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::back(void) noexcept const'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(64,23): message : 'const _Ty &std::vector<_Ty,_Alloc>::back(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(64,10): message : Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(64,10): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(2001,34): message : or       '_Ty &std::vector<_Ty,_Alloc>::back(void) noexcept'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(64,23): message : '_Ty &std::vector<_Ty,_Alloc>::back(void) noexcept': cannot convert 'this' pointer from 'std::vector' to 'std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(64,10): message : Reason: cannot convert from 'std::vector' to 'std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(64,10): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(64,23): message : while trying to match the argument list '()'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(69,17): error C2663: 'std::vector<_Ty,_Alloc>::back': no overloaded function has valid conversion for 'this' pointer
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(2010,40): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::back(void) noexcept const'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(69,17): message : 'const _Ty &std::vector<_Ty,_Alloc>::back(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(69,4): message : Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(69,4): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(2001,34): message : or       '_Ty &std::vector<_Ty,_Alloc>::back(void) noexcept'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(69,17): message : '_Ty &std::vector<_Ty,_Alloc>::back(void) noexcept': cannot convert 'this' pointer from 'std::vector' to 'std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(69,4): message : Reason: cannot convert from 'std::vector' to 'std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(69,4): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(69,17): message : while trying to match the argument list '()'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(73,17): error C2663: 'std::vector<_Ty,_Alloc>::push_back': no overloaded function has valid conversion for 'this' pointer
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(939,23): message : could be 'void std::vector<_Ty,_Alloc>::push_back(_Ty &&)'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(73,17): message : 'void std::vector<_Ty,_Alloc>::push_back(_Ty &&)': cannot convert 'this' pointer from 'std::vector' to 'std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(73,4): message : Reason: cannot convert from 'std::vector' to 'std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(73,4): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(935,23): message : or       'void std::vector<_Ty,_Alloc>::push_back(const _Ty &)'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(73,17): message : 'void std::vector<_Ty,_Alloc>::push_back(const _Ty &)': cannot convert 'this' pointer from 'std::vector' to 'std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(73,4): message : Reason: cannot convert from 'std::vector' to 'std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(73,4): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(73,17): message : while trying to match the argument list '(PacketList2)'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(79,17): error C2663: 'std::vector<_Ty,_Alloc>::back': no overloaded function has valid conversion for 'this' pointer
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(2010,40): message : could be 'const _Ty &std::vector<_Ty,_Alloc>::back(void) noexcept const'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(79,17): message : 'const _Ty &std::vector<_Ty,_Alloc>::back(void) noexcept const': cannot convert 'this' pointer from 'std::vector' to 'const std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(79,4): message : Reason: cannot convert from 'std::vector' to 'const std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(79,4): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(2001,34): message : or       '_Ty &std::vector<_Ty,_Alloc>::back(void) noexcept'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(79,17): message : '_Ty &std::vector<_Ty,_Alloc>::back(void) noexcept': cannot convert 'this' pointer from 'std::vector' to 'std::vector<_Ty,_Alloc> &'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(79,4): message : Reason: cannot convert from 'std::vector' to 'std::vector<_Ty,_Alloc>'
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(79,4): message : Conversion requires a second user-defined-conversion operator or constructor
+C:\projects\AdventOfCode2022\AdventOfCodeCpp\PacketList2.h(79,17): message : while trying to match the argument list '()'
   Generating Code...

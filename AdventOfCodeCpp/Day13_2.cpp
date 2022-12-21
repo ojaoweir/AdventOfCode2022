@@ -5,6 +5,10 @@
 
 using namespace std;
 
+class PacketObject;
+class PacketInt;
+class PacketList;
+
 class PacketObject {
 public:
 	virtual void Print() {
