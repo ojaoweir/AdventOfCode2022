@@ -1,40 +1,21 @@
+
 #pragma once
+#include "PacketList2.h"
 #include "PacketObject2.h"
 
 using namespace std;
 
 class PacketInt2 : public PacketObject2
 {
-
+private:
 	int value;
 public:
-	PacketInt2(int value) {
-		this->value = value;
-	}
+	PacketInt2(int value);
 
-	void Print() {
-		cout << value;
-	}
+	void Print();
 
-	PacketList ToList() {
-		PacketList pl(*this);
-		return pl;
-	}
+	PacketList2 ToList();
 
-	int CompareTo(PacketObject2 other) {
-		PacketInt2* otherPtr = dynamic_cast<PacketInt2*>(&other);
-		if (otherPtr == nullptr) {
-			return ToList().CompareTo(other);
-		}
-		if (otherPtr->value == value) {
-			return 0;
-		}
-		if (value < otherPtr->value) {
-			return 1;
-		}
-		if (value > otherPtr->value) {
-			return -1;
-		}
-	}
+	int CompareTo(PacketObject2 other);
 };
 

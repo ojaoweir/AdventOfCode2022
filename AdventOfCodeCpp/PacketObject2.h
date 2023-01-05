@@ -1,3 +1,4 @@
+
 #pragma once
 #include <iostream>
 
@@ -8,34 +9,18 @@ using namespace std;
 class PacketObject2
 {
 public:
-	virtual void Print() {
-		cout << "I am a packetObject";
-	}
+	virtual void Print();
 
-	virtual int CompareTo(PacketObject2 other) {
-		return -1;
-	}
+	virtual int CompareTo(PacketObject2 other);
 
-	virtual PacketList2 ToList() {
-		PacketList2 pl;
-		return pl;
-	}
+	virtual PacketList2 ToList();
 
-	virtual bool IsOpen() {
-		return false;
-	}
+	virtual bool IsOpen();
 
-	virtual void AddInt(int value) {
+	virtual void AddInt(int value);
 
-	}
+	virtual void OpenChild();
 
-	virtual void OpenChild() {
-
-	}
-
-	virtual void CloseChild() {
-
-	}
+	virtual void CloseChild();
 
 };
-
